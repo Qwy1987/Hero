@@ -45,9 +45,9 @@ export class HeroesComponent implements OnInit {
   }
 
   //删除一条
-  delete(hero: Hero): void {
+  onDelete(hero: Hero): void {
     this.heroService
-      .delete(hero.id)
+      .remove(hero.id)
       .then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
         if (this.selectedHero === hero) { this.selectedHero = null; }

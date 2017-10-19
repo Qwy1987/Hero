@@ -23,6 +23,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //解析地址栏参数
     this.route.paramMap
       .switchMap(
         (params: ParamMap) => this.heroService.getHero(+params.get('id'))
